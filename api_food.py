@@ -12,10 +12,8 @@ class FoodInfo:
             products = data.get('products', [])
             if products:  # Проверяем, есть ли найденные продукты
                 first_product = products[0]
-                return {
-                    'name': first_product.get('product_name', 'Неизвестно'),
-                    'calories': first_product.get('nutriments', {}).get('energy-kcal_100g', 0)
-                }
+                calories = first_product.get('nutriments', {}).get('energy-kcal_100g', 0)
+                return calories  # Возвращаем только количество калорий
             return None
         print(f"Ошибка: {response.status_code}")
         return None

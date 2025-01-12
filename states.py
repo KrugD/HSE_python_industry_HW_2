@@ -6,3 +6,5 @@ class Form(StatesGroup):
     age = State()
     activity = State()
     city = State()
+    name = State()
+    grams = State()
